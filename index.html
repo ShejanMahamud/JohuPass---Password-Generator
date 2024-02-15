@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!-- favicon link -->
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/login.png"
+      type="image/x-icon"
+    />
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- head end -->
+  <body class="h-auto w-full font-poppins">
+    <section class="mx-auto lg:w-[90%] mb-28 w-full">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li>
+                <a>Services</a>
+              </li>
+              <li><a>Products</a></li>
+              <li><a>Blog</a></li>
+            </ul>
+          </div>
+          <a class="text-lg lg:text-2xl font-bold text-white"
+            ><span class="text-violet-700">Johu</span>Pass</a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li>
+              <a>Services</a>
+            </li>
+            <li><a>Products</a></li>
+            <li><a>Blog</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <div class="flex items-center gap-2">
+            <img
+              src="./assets/icons/github-color-svgrepo-com.svg"
+              alt="github.svg"
+            />
+            <span class="text-xs lg:text-base">@ShejanMahamud</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- password generator -->
+    <section
+      class="w-[90%] mx-auto grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 my-5 lg:gap-40 gap-16"
+    >
+      <div class="flex items-center gap-20 flex-col w-full">
+        <div class="flex items-center gap-28 justify-between w-full">
+          <div class="flex items-center flex-col gap-16">
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                class="checkbox checkbox-primary"
+                id="lowercase"
+              />
+              <span class="label-text">Lowercase</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                class="checkbox checkbox-primary"
+                id="uppercase"
+              />
+              <span class="label-text">Uppercase</span>
+            </div>
+          </div>
+          <div class="flex items-center flex-col gap-16">
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                class="checkbox checkbox-primary"
+                id="symbols"
+              />
+              <span class="label-text">Symbols</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                class="checkbox checkbox-primary"
+                id="numbers"
+              />
+              <span class="label-text">Numbers</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center lg:gap-5 gap-3 w-full mx-auto">
+          <span class="text-xs lg:text-sm">Password Length:</span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="13"
+            class="range range-xs w-[50%] lg:w-full"
+            id="range"
+          />
+          <input
+            type="text"
+            class="rounded-md bg-white focus:outline-none w-[10%] px-2 py-2 text-[#1e1e1e] text-center font-medium"
+            id="range-field"
+          />
+        </div>
+        <div class="flex items-center gap-1 hidden" id="error">
+          <img src="./assets/icons/error-filled-svgrepo-com.svg" alt="" />
+          <p class="text-base font-bold text-white">
+            Please select at least one number!
+          </p>
+        </div>
+        <button
+          class="px-7 py-3 rounded-md bg-violet-700 text-white font-medium"
+          id="generate"
+        >
+          Generate Password
+        </button>
+      </div>
+      <div class="flex flex-col items-center gap-10">
+        <textarea
+          name=""
+          id="result"
+          cols="30"
+          rows="7"
+          class="w-full rounded-lg focus:outline-none text-white font-medium text-xl px-10 py-10 text-center"
+        ></textarea>
+        <div class="flex items-center gap-1 hidden" id="copied">
+          <img src="./assets/icons/bulb-svgrepo-com.svg" alt="" />
+          <p class="text-base font-bold text-white">Copied!</p>
+        </div>
+        <button
+          class="px-7 py-3 rounded-md bg-violet-700 text-white font-medium"
+          id="copy"
+        >
+          Copy Password
+        </button>
+        <ol id="history"></ol>
+      </div>
+    </section>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
