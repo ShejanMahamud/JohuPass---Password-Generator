@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Password Generator</title>
+    <title>Johu Pass | Password Generator</title>
+    <meta
+      name="description"
+      content="Generate random strong password and protect your privacy on online!"
+    />
+    <meta
+      name="keywords"
+      content="Password Generator, JohuPass, Random Pass, Password Strong"
+    />
+    <meta name="author" content="Shejan Mahamud" />
     <!-- css link -->
     <link rel="stylesheet" href="./styles/main.css" />
     <!-- favicon link -->
@@ -21,61 +30,15 @@
   </head>
   <!-- head end -->
   <body class="h-auto w-full font-poppins">
-    <section class="mx-auto lg:w-[90%] mb-28 w-full">
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li><a>Home</a></li>
-              <li>
-                <a>Services</a>
-              </li>
-              <li><a>Products</a></li>
-              <li><a>Blog</a></li>
-            </ul>
-          </div>
-          <a class="text-lg lg:text-2xl font-bold text-white"
-            ><span class="text-violet-700">Johu</span>Pass</a
-          >
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li>
-              <a>Services</a>
-            </li>
-            <li><a>Products</a></li>
-            <li><a>Blog</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <div class="flex items-center gap-2">
-            <img
-              src="./assets/icons/github-color-svgrepo-com.svg"
-              alt="github.svg"
-            />
-            <span class="text-xs lg:text-base">@ShejanMahamud</span>
-          </div>
-        </div>
+    <section class="mx-auto lg:w-[90%] mb-28 w-full mt-5">
+      <div class="flex items-center justify-between px-5 lg:px-0">
+        <h1 class="font-bold text-xl text-white lg:text-3xl">JohuPass</h1>
+        <button
+          class="flex items-center gap-2 text-white font-medium text-sm lg:text-base"
+        >
+          <img src="./assets/icons/github-color-svgrepo-com.svg" alt="github" />
+          <span>@ShejanMahamud</span>
+        </button>
       </div>
     </section>
     <!-- password generator -->
@@ -88,41 +51,41 @@
             <div class="flex items-center gap-2">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary"
+                class="checkbox border-white"
                 id="lowercase"
               />
-              <span class="label-text">Lowercase</span>
+              <span class="label-text text-white">Lowercase</span>
             </div>
             <div class="flex items-center gap-2">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary"
+                class="checkbox border-white"
                 id="uppercase"
               />
-              <span class="label-text">Uppercase</span>
+              <span class="label-text text-white">Uppercase</span>
             </div>
           </div>
           <div class="flex items-center flex-col gap-16">
             <div class="flex items-center gap-2">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary"
+                class="checkbox border-white"
                 id="symbols"
               />
-              <span class="label-text">Symbols</span>
+              <span class="label-text text-white">Symbols</span>
             </div>
             <div class="flex items-center gap-2">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary"
+                class="checkbox border-white"
                 id="numbers"
               />
-              <span class="label-text">Numbers</span>
+              <span class="label-text text-white">Numbers</span>
             </div>
           </div>
         </div>
         <div class="flex items-center lg:gap-5 gap-3 w-full mx-auto">
-          <span class="text-xs lg:text-sm">Password Length:</span>
+          <span class="text-xs lg:text-sm text-white">Password Length:</span>
           <input
             type="range"
             min="0"
@@ -131,6 +94,7 @@
             class="range range-xs w-[50%] lg:w-full"
             id="range"
           />
+
           <input
             type="text"
             class="rounded-md bg-white focus:outline-none w-[10%] px-2 py-2 text-[#1e1e1e] text-center font-medium"
@@ -144,7 +108,7 @@
           </p>
         </div>
         <button
-          class="px-7 py-3 rounded-md bg-violet-700 text-white font-medium"
+          class="px-7 py-3 rounded-md bg-transparent border-white border-2 text-white font-medium"
           id="generate"
         >
           Generate Password
@@ -155,15 +119,42 @@
           name=""
           id="result"
           cols="30"
-          rows="7"
-          class="w-full rounded-lg focus:outline-none text-white font-medium text-xl px-10 py-10 text-center"
+          rows="4"
+          class="w-full rounded-lg focus:outline-none text-white bg-gray-600 font-medium text-xl px-10 py-10 text-center"
         ></textarea>
+        <div class="w-[90%] mx-auto flex items-center gap-10">
+          <div class="flex w-full flex-col items-center gap-3">
+            <span>Weak</span>
+            <hr
+              class="border-2 rounded-full border-gray-200 w-full"
+              id="weak"
+            />
+          </div>
+          <div class="flex w-full flex-col items-center gap-3">
+            <span>Medium</span>
+            <hr
+              class="border-2 rounded-full border-gray-200 w-full"
+              id="medium"
+            />
+          </div>
+          <div class="flex w-full flex-col items-center gap-3">
+            <span>Strong</span>
+            <hr
+              class="border-2 rounded-full border-gray-200 w-full"
+              id="strong"
+            />
+          </div>
+        </div>
         <div class="flex items-center gap-1 hidden" id="copied">
           <img src="./assets/icons/bulb-svgrepo-com.svg" alt="" />
           <p class="text-base font-bold text-white">Copied!</p>
         </div>
+        <div class="flex items-center gap-1 hidden" id="error2">
+          <img src="./assets/icons/error-filled-svgrepo-com.svg" alt="" />
+          <p class="text-base font-bold text-white">Generate a pass first!</p>
+        </div>
         <button
-          class="px-7 py-3 rounded-md bg-violet-700 text-white font-medium"
+          class="px-7 py-3 rounded-md bg-transparent border-white border-2 text-white font-medium"
           id="copy"
         >
           Copy Password

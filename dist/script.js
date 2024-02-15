@@ -1,8 +1,8 @@
 document.getElementById('range-field').value = document.getElementById("range").value;
 document.getElementById("range").addEventListener('change', function(e) {
     const valueOfRange = e.target.value;
+    //document.getElementById("range-field").value = valueOfRange;
     document.getElementById("range-field").value = valueOfRange;
-    
 })
 document.getElementById("range-field").addEventListener('keyup', function(e) {
     const valueOfRange = e.target.value;
@@ -10,37 +10,14 @@ document.getElementById("range-field").addEventListener('keyup', function(e) {
 })
 
 document.getElementById("generate").addEventListener('click', function(){
-    const generatedPassword = generatePassword();
-    document.getElementById("result").innerText = generatedPassword;
-    const len = generatedPassword.length;
-    
-    if(len <= 8){
-        document.getElementById('weak').style.border = '2px solid red';
-    }else{
-        document.getElementById('weak').style.border = '2px solid rgb(229 231 235)';
-    }if(len > 8 && len < 16  ){
-        document.getElementById('medium').style.border = '2px solid yellow';
-    }else{
-        document.getElementById('medium').style.border = '2px solid rgb(229 231 235)';
-    }if(len > 16){
-        document.getElementById('strong').style.border = '2px solid green';
-    }else{
-        document.getElementById('strong').style.border = '2px solid rgb(229 231 235)';
-    }
+        document.getElementById("result").innerText = generatePassword();
     document.getElementById('copied').classList.add("hidden");
-    document.getElementById('error2').classList.add("hidden");
-});
+    }
+)
 
 document.getElementById('copy').addEventListener('click',function(){
-    const genPass = document.getElementById('result').value;
-    if(genPass === ""){
-        document.getElementById("error2").classList.remove("hidden");
-        document.getElementById('copied').classList.add("hidden");
-    }
-    else{
-        copyText();
+    copyText();
     document.getElementById('copied').classList.remove("hidden");
-    }
 
 })
 
